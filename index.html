@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="sign-in_container">
+            <h1>Sign in</h1>
+            <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your account</span>
+            <form action="/action_page.php">
+            <input type="text" name="email" id="email" placeholder="Email">
+            </br>
+            <input type="text" name="password" id="password" placeholder="Password">
+            </form>
+            <span id="forgot">Forgot your password?</span>
+        </br>
+            <button id="btn">SIGN IN</button>
+        </div>
+        <div class="right_side_layout">
+            
+                <h1>HELLO, friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button id="btn_signup">SIGN UP</button>
+            
+        </div>
+        <div class="sign-up_container">
+            <h1>Create Account</h1>
+            <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your email for registeration</span>
+            <form action="/action_page.php">
+            <input type="text" name="name" id="name" placeholder="Name">
+            </br>
+            <input type="text" name="email" id="email" placeholder="Email">
+            </br>
+            <input type="text" name="password" id="password" placeholder="Password">
+            </form>
+            
+            <button id="btn_signup">SIGN UP</button>
+        </div>
+        <div class="left_side_layout">
+            <h1>WELCOME BACK!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button id="btn_signin">SIGN IN</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
