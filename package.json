@@ -1,0 +1,23 @@
+{
+  "name": "classroom-assistant",
+  "version": "1.0.0",
+  "description": "A place to submit your assignments,get your doubts answered,view class announcements with ease",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomic-Samurai/Classroom-Assistant.git"
+  },
+  "author": "Akshat Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atomic-Samurai/Classroom-Assistant/issues"
+  },
+  "homepage": "https://github.com/atomic-Samurai/Classroom-Assistant#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
