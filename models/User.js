@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-//Conver your schema to model
+//Convert your schema to model
 const User = mongoose.model('User',userSchema);
 
 //export your model

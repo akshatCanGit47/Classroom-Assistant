@@ -13,11 +13,16 @@ app.set('view engine','ejs');
 //joining the views folder and indexjs using pathjoin
 app.set('views',path.join(__dirname,'views'));
 
+//use routes
 //now we will use a middleware to parse the form data into request.body's data
 app.use(express.urlencoded());
 
 //middleware to use static files.
 app.use(express.static('assets'));
+
+app.use('/',require('./routes'));
+
+
 
 
 //Telling the express to listen requests on port and a callback error function.
