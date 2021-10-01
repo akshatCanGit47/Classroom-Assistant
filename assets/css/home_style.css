@@ -133,3 +133,7 @@ li:hover{
 .settings-dropdown-active{
     display: block !important;
 }
+a{
+    text-decoration: none;
+    height: 100%;
+}

@@ -11,6 +11,8 @@ const User = require('./models/User.js');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
+const MongoStore = require('connect-mongo');
+
 //now we will use a middleware to parse the form data into request.body's data
 app.use(express.urlencoded());
 
@@ -33,13 +35,24 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000 * 60 * 100)
-    }
+    },
+    store: MongoStore.create(
+        {
+            mongoUrl:"mongodb://localhost/[yourDbName]",
+            autoRemove: 'disabled'
+        
+        },
+        function(err){
+            console.log(err ||  'connect-mongodb setup ok');
+        }
+    )
 }));
 
 
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(passport.setAuthenticatedUser);
 //use routes
 app.use('/',require('./routes'));
 
