@@ -12,14 +12,15 @@
         <div class="sign-in_container">
             <h1>Sign in</h1>
             <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your account</span>
-            <form action="/users/Sign-in">
-            <input type="text" name="email" id="email" placeholder="Email">
+            <form action="/users/Create-Session" method="POST">
+            <input type="email" name="email" id="email" placeholder="Email">
             </br>
-            <input type="text" name="password" id="password" placeholder="Password">
-            </form>
+            <input type="password" name="password" id="password" placeholder="Password">
+            
             <span id="forgot">Forgot your password?</span>
         </br>
-            <button id="btn">SIGN IN</button>
+            <button id="btn" type="submit">SIGN IN</button>
+        </form>
         </div>
         <div class="right_side_layout">
             

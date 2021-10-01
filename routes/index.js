@@ -9,7 +9,8 @@ const router = express.Router();
 const homeController = require('../controllers/home_controller');
 
 //call the respective function
-router.get('/',homeController.home);
+router.get('/home',homeController.home);
+router.get('/',homeController.home)
 
 //require the next routes.
 router.use('/users', require('./users'));
