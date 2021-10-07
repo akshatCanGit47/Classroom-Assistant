@@ -14,13 +14,16 @@ const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
 
 //now we will use a middleware to parse the form data into request.body's data
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 //using a cookie parser
 app.use(cookieParser());
 
 //middleware to use static files.
 app.use(express.static('assets'));
+//make the upload paths available
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
 
 //setting up the view engine. We will be using ejs
 app.set('view engine','ejs');

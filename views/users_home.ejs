@@ -32,7 +32,7 @@
     <section id="settings-dropdown">
         <ul>
             <li>
-                <a href="/users/home">
+                <a href="/users/profile">
                     <button>
                         Profile
                     </button>
@@ -49,20 +49,28 @@
             
         </ul>
     </section>
-    <section>
+    <section id="create-join-dropdown">
         <ul>
             <li>
-                <button>
-                    Create
-                </button>
+                <a href="/users/profile">
+                    <button>
+                        Create
+                    </button>
+                </a>
             </li>
             <li>
-                <button>
-                    Join
-                </button>
+                <a href="/users/profile">
+                    <button>
+                        Join
+                    </button>
+                </a>
             </li>
         </ul>
     </section>
+    <main id=user-details > 
+        <p><%= locals.user.name %></p>
+        <p><%= locals.user.email %></p>
+    </main>
     <!-- <script src="./jquery-3.6.0.js"></script> -->
     <script src="/js/index2.js"></script>
 </body>

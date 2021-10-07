@@ -16,4 +16,9 @@ router.get('/home',passport.checkAuthentication,usersController.usersHome);
 
 router.get('/Sign-out', usersController.destroySession);
 
+// router.get('/change-avatar',usersController.changeAvatar);
+// roruter.get('/changePassword',usersController.changePassword);
+// router.get('/change-name-email',usersController.changeNameEmail);
+
+
 module.exports = router;
