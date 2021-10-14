@@ -1,7 +1,8 @@
 const User = require('../models/User.js');
 const path = require('path');
+const Classroom = require('../models/Classroom');
 module.exports.checkAuth = function(req,res){
-    
+   
     //Todo later
 }
 
@@ -54,4 +55,29 @@ module.exports.destroySession = function(req,res){
     req.logout();
 
     return res.redirect('/home');
+}
+
+module.exports.createClassroom = function(req,res){
+    res.render('create_classroom');
+}
+
+module.exports.newClassroom = function(req,res){
+    // console.log(res.user);
+    User.findById(req.user._id,function(err,user){
+        if(user){
+            Classroom.create({
+                subject: req.body.subject,
+                teacher: req.user._id,
+                name: req.body.name,
+                section: req.body.section
+            },
+            function(err, classroom){
+                if(err){console.log('error in creating classroom'); return}
+                
+                user.classrooms.push(classroom);
+                user.save();
+                return res.redirect("/users/home");
+            })
+        }
+    }); 
 }

@@ -12,9 +12,12 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
+//express ejs layouts
+const expressLayouts = require('express-ejs-layouts');
+
 
 //now we will use a middleware to parse the form data into request.body's data
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 //using a cookie parser
 app.use(cookieParser());
@@ -25,10 +28,24 @@ app.use(express.static('assets'));
 app.use('/uploads',express.static(__dirname + '/uploads'));
 
 
+
+app.use(expressLayouts);
+
+
+//Extracting styles and puuting them in the header
+app.set('layout extractStyles', true);
+//Extracting scripts and putting them below body
+app.set('layout extractScripts', true);
+
+
 //setting up the view engine. We will be using ejs
 app.set('view engine','ejs');
 //joining the views folder and indexjs using pathjoin
 app.set('views',path.join(__dirname,'views'));
+
+//Removing the layout from the sign in page
+app.set('layout home',false);
+
 
 app.use(session({
     name: 'Classroom-Assistant',

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e32f3d0e24.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <%- style %>
+    <title>Home</title>
+</head>
+<body id="main-body">
+        <nav>
+            <button id="bar" class="ham-bar-icon">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div id="avtar">
+                <img src="/images/profile.jpg" alt="profile">
+            </div>
+            <div id="heading">
+                <h1>Classroom Assistant</h1>
+            </div>
+            <button id="create">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button id="settings">
+                <i class="fas fa-cog"></i>
+            </button>
+        </nav>
+    <section id="menu-visible" >
+        <p>all the Classroom</p>
+    </section>
+    <section id="settings-dropdown">
+        <ul>
+            <li>
+                <a href="/users/profile">
+                    <button>
+                        Profile
+                    </button>
+                </a>
+            </li>
+
+            <li>
+                <a href="/users/Sign-out">
+                    <button>
+                        Signout
+                    </button>
+                </a>    
+            </li>
+            
+        </ul>
+    </section>
+    <section id="create-join-dropdown">
+        <ul>
+            <li>
+                <a href="/users/create-classroom">
+                    <button>
+                        Create
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/users/join-classroom">
+                    <button>
+                        Join
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <main id=user-details > 
+        <%- body %>
+    </main>
+    <!-- <script src="./jquery-3.6.0.js"></script> -->
+    <script src="/js/layout.js"></script>
+    <%- script %>
+
+</body>
+</html>

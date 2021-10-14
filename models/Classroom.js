@@ -9,6 +9,14 @@ const classSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    name:{
+        type: String,
+        required: true
+    },
+    section: {
+        type: String,
+        required: true
+    },
     students: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -16,6 +24,9 @@ const classSchema = new mongoose.Schema({
         }
     ]
 
+},
+{
+    timestamps: true
 });
 
 //Convert your schema to model

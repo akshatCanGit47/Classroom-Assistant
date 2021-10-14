@@ -1,0 +1,6 @@
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 30vh;
+}

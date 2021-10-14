@@ -6,7 +6,7 @@ module.exports.home = function(req,res){
     if(req.isAuthenticated()){
         return res.redirect('/users/home');
     }
-    return res.render('home');
+    return res.render('home',{ layout: false });
 }
 
 
