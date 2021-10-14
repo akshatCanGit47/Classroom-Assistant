@@ -1,11 +1,32 @@
 
-        <% if(locals.user){ %>
-            <h2>Create a new Classroom</h2>
-            <form action="/users/new-classroom" method="POST" >
-                <input type="text" name="subject" placeholder="Enter your subject">
-                <input type="text" name="name" placeholder="Enter your classroom's name">
-                <input type="text" name="section" placeholder="Enter the section">
-                <button type="submit">create</button>
-            </form>
-        <%} %>
-    
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/create_classroom.css">
+        </head>
+        <body>
+        
+        <h3>Contact Form</h3>
+        
+        <div class="container">
+          <form action="/action_page.php">
+            <label for="name">Classroom Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Name..">
+        
+            <label for="section">Section</label>
+            <input type="text" id="lname" name="lastname" placeholder="Section..">
+        
+            <label for="subject">Subject</label>
+            <input type="text" id="lname" name="lastname" placeholder="Section..">
+            
+        
+            <label for="about">About</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        
+        </body>
+        </html>
