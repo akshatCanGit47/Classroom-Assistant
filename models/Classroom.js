@@ -9,13 +9,17 @@ const classSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    name:{
+    title:{
         type: String,
         required: true
     },
     section: {
         type: String,
         required: true
+    },
+    description: {
+        type: String,
+        required: false
     },
     students: [
         {

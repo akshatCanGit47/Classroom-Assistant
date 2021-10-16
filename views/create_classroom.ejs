@@ -1,32 +1,24 @@
 
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" href="/css/create_classroom.css">
-        </head>
-        <body>
-        
         <h3>Contact Form</h3>
         
-        <div class="container">
-          <form action="/action_page.php">
-            <label for="name">Classroom Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Name..">
+        <div class="create-classroom-form-container">
+          <form action="/users/new-classroom" method="post">
+            <label for="name">Title</label>
+            <input type="text" id="title" name="title" placeholder="Title..">
         
             <label for="section">Section</label>
-            <input type="text" id="lname" name="lastname" placeholder="Section..">
+            <input type="text" id="section" name="section" placeholder="Section..">
         
             <label for="subject">Subject</label>
-            <input type="text" id="lname" name="lastname" placeholder="Section..">
+            <input type="text" id="subject" name="subject" placeholder="Subject..">
             
+            <label for="Grade">Grade</label>
+            <input type="text" id="grade" name="grade" placeholder="Grade..">
         
-            <label for="about">About</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-        
+            <label for="Description">Description</label>
+            <textarea id="subject" name="Description" placeholder="Write something.." style="height:200px"></textarea>
             <input type="submit" value="Submit">
           </form>
         </div>
-        
-        </body>
-        </html>

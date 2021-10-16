@@ -41,8 +41,21 @@ module.exports.signUp = function(req, res){
 
 
 module.exports.usersHome = function(req,res){
-    if(req.isAuthenticated())
-    return res.render('users_home');
+    if(req.isAuthenticated()){
+        User.findOne({_id:req.user._id})
+        .populate({
+            path: 'classrooms',
+            populate: {
+                path: 'teacher'
+            }
+        }).exec(function(err,user){
+                return res.render('users_home',{
+                    title: "Users Home",
+                    users: user
+                });
+        });
+        
+    }
     else
     return res.redirect('/home'); 
 }
@@ -68,8 +81,11 @@ module.exports.newClassroom = function(req,res){
             Classroom.create({
                 subject: req.body.subject,
                 teacher: req.user._id,
-                name: req.body.name,
-                section: req.body.section
+                title: req.body.title,
+                section: req.body.section,
+                description: req.body.description,
+                grade: req.body.grade
+
             },
             function(err, classroom){
                 if(err){console.log('error in creating classroom'); return}

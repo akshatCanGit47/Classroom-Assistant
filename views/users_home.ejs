@@ -1,4 +1,16 @@
+<link rel="stylesheet" href="/css/users_home.css">
+<div id="classroom-cards-container">
+        <% for (classroom of users.classrooms){ %>
+                <div class="cards">
+                        <h3> <%= classroom.title %> </h3>
+                        <span> <%= classroom.teacher.name %> </span>
+                        <small> <%= classroom.section %> </small>
+                        <small> <%= classroom.grade %> </small>
+                </div>
+        <% } %>
 
-        <p><%= user.name %></p>
-        <p><%= locals.user.email %></p>
+</div>
+
+        
+
     

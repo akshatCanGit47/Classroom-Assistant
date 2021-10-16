@@ -1,0 +1,24 @@
+#classroom-cards-container{
+    position: absolute;
+    top: 30vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cards{
+    margin: 2vw 2vw 2vw 2vw;
+    height: 200px;
+    width: 150px;
+    background-image: linear-gradient(to right,rgb(186, 240, 116),rgb(198, 230, 197));
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+
+}
+.cards h3{
+    width:80%;
+    height: 10%;
+    box-sizing: border-box;
+    color: black;
+}
+.cards h4{
+
+}

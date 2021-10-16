@@ -1,8 +1,9 @@
 //Require mongoose
 const mongoose = require('mongoose');
-const multer = require('multer');
-const path = require('path');
-const AVATAR_PATH = path.join('/uploads/users/avatars');
+const Classroom = require('./Classroom');
+// const multer = require('multer');
+// const path = require('path');
+// const AVATAR_PATH = path.join('/uploads/users/avatars');
 
 
 //Create a schema
@@ -26,7 +27,7 @@ const userSchema = new mongoose.Schema({
     classrooms: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Classroom',
+            ref: 'Classroom'
         }
     ]
 
