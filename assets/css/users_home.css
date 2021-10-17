@@ -1,24 +1,57 @@
 #classroom-cards-container{
     position: absolute;
-    top: 30vh;
+    top: 15vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 3vw;
+    gap: 30px;
 }
 .cards{
-    margin: 2vw 2vw 2vw 2vw;
+    /* margin: 10px; */
     height: 200px;
     width: 150px;
-    background-image: linear-gradient(to right,rgb(186, 240, 116),rgb(198, 230, 197));
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    background-image: linear-gradient(to bottom,rgb(9, 158, 83) 50%,white 50%);
+    box-shadow: 0 4px 8px #0005,
+          0 8px 8px #0004;
+    transition: transform 300ms ease;
+    z-index: 0;
+    border-radius: 12px;
 
 }
 .cards h3{
-    width:80%;
+    display: block;
+    width:100%;
     height: 10%;
     box-sizing: border-box;
-    color: black;
-}
-.cards h4{
+    color: whitesmoke;
+    box-sizing: border-box;
 
+}
+.classroom-title :hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    text-decoration: underline;
+    color: grey;
+}
+.cards span{
+    display: block;
+    position: absolute;
+    top: 40%;
+    box-sizing: border-box;
+}
+.cards .classroom-section{
+    position: absolute;
+    display: block;
+    
+    top: 55%;
+    box-sizing: border-box;
+}
+.cards .classroom-grade{
+    position: absolute;
+    display: block;
+    
+    top: 70%;
+    box-sizing: border-box; 
 }

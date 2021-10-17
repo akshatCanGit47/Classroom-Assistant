@@ -71,7 +71,9 @@ module.exports.destroySession = function(req,res){
 }
 
 module.exports.createClassroom = function(req,res){
-    res.render('create_classroom');
+    res.render('create_classroom',{
+        title:"Create clasroom"
+    });
 }
 
 module.exports.newClassroom = function(req,res){

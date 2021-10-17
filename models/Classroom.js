@@ -21,6 +21,10 @@ const classSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    grade: {
+        type: String,
+        required: true
+    },
     students: [
         {
             type: mongoose.Schema.Types.ObjectId,
