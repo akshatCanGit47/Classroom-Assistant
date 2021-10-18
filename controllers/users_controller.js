@@ -99,3 +99,10 @@ module.exports.newClassroom = function(req,res){
         }
     }); 
 }
+
+module.exports.joinClassroomDetails = function(req,res){
+    res.render('join_classroom',
+    {
+        title: 'Join Classroom'
+    });
+}

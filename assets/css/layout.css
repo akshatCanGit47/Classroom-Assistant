@@ -105,9 +105,11 @@ nav #heading{
     z-index: 1;
 }
 
-    
-li:hover{
-    background-color: grey;
+#create-join-dropdown a:hover{
+    background-color: rgb(119, 119, 119);
+} 
+#settings-dropdown a:hover{
+    background-color: rgb(119, 119, 119);
 }
 .menu-active{
     position: fixed;
@@ -143,7 +145,7 @@ li:hover{
 #settings-dropdown li button{
     text-align: left;
     background-color: transparent;
-    width: 128px;
+    width: 100%;
     height: auto;
     border: none;
     color: rgba(0,0,0,0.87);
@@ -155,9 +157,10 @@ li:hover{
 .settings-dropdown-active{
     display: block !important;
 }
-a{
+#settings-dropdown a{
     text-decoration: none;
-    
+    height: 100%;
+    width: 100%;
 }
 #create-join-dropdown{
     height: 8vh;
@@ -182,11 +185,13 @@ a{
     height: 2vh;
     margin-bottom: 1.5vh;
     list-style: none;
+    align-items: center;
+    
 }
 #create-join-dropdown li button{
     text-align: left;
     background-color: transparent;
-    width: 128px;
+    width: 100%;
     height: auto;
     border: none;
     color: rgba(0,0,0,0.87);
