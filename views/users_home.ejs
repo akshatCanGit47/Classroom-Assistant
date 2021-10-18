@@ -2,10 +2,22 @@
 <div id="classroom-cards-container">
         <% for (classroom of users.classrooms){ %>
                 <div class="cards">
-                        <a href=""><h3 class="classroom-title"> <%= classroom.title %> </h3></a>
-                        <span> <%= classroom.teacher.name %> </span>
-                        <small class="classroom-section"> <%= classroom.section %> </small>
-                        <small class="classroom-grade"> <%= classroom.grade %> </small>
+                        <div class="upperpart">
+                                <a href=""><h1 class="classroom-title"> <%= classroom.title %> </h1></a>
+                                <small class="classroom-section"> sec-<%= classroom.section %> </small>
+                                <label>&nbsp;<small class="classroom-grade"> grade-<%= classroom.grade %> </small></label>
+                                <label>&nbsp;<span> <%= classroom.teacher.name %> </span></label>
+                        </div>
+                        <div class="middlepart">
+                                <img id="creator" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                                <!-- <small class="classroom-section"> sec-<%= classroom.section %> </small>
+                                <small class="classroom-grade"> grade-<%= classroom.grade %> </small> -->
+                        </div>
+
+                        <div class="bottompart">
+                                <small>CREATED AT:17/10/21</small>
+                        </div>
+
                 </div>
         <% } %>
 
