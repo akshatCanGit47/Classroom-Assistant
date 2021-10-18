@@ -21,12 +21,36 @@ document.addEventListener('click', function () {
 
 //settings dropdown
 settings.addEventListener('click',function(e){
+  e.stopPropagation();
+});
+settings.addEventListener('click',function(e){
   settingsDropdown.classList.toggle("settings-dropdown-active");
+  createJoinDropdown.classList.remove('create-join-dropdown-active');
   console.log("dropdown should work");
 });
+settingsDropdown.addEventListener('click', function (e) {
+  e.stopPropagation();
+});
+
+document.addEventListener('click', function () {
+  settingsDropdown.classList.remove('settings-dropdown-active');
+});
+
 
 //create/join dropdown
 create.addEventListener('click',function(e){
+  e.stopPropagation();
+});
+create.addEventListener('click',function(e){
   createJoinDropdown.classList.toggle("create-join-dropdown-active");
+  settingsDropdown.classList.remove('settings-dropdown-active');
   console.log("create join dropdown should work");
 });
+createJoinDropdown.addEventListener('click', function (e) {
+  e.stopPropagation();
+});
+
+document.addEventListener('click', function () {
+  createJoinDropdown.classList.remove('create-join-dropdown-active');
+});
+
