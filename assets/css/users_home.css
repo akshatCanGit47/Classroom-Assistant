@@ -12,15 +12,19 @@
     /* margin: 10px; */
     /* height: 200px;
     width: 150px; */
-    height: 18rem;
+    height: 20rem;
     width: 19rem;
-    background-image: linear-gradient(to bottom,rgb(9, 158, 83) 50%,white 50%);
-    box-shadow: 0 4px 8px #0005,
-          0 8px 8px #0004;
+    /* background-image: linear-gradient(to bottom,rgb(9, 158, 83) 50%,white 50%); */
+    /* box-shadow: 0 4px 8px #0005,
+          0 8px 8px #0004; */
     transition: transform 300ms ease;
     z-index: 0;
     border-radius: 12px;
-
+    border: 1px solid rgb(199,199,199);
+}
+.cards:hover{
+    box-shadow: 0 4px 8px #0005,
+          0 8px 8px #0004;
 }
 /* .cards h3{
     display: block;
@@ -38,6 +42,7 @@
     color: grey;
 } */
 .classroom-title {
+    margin-top: 4px;
     margin-left: 1rem;
     display: inline-block;
     position: relative;
@@ -63,24 +68,78 @@
     transform-origin: bottom left;
   }
 .cards span{
+    color: honeydew;
     font-family:'Google Sans',Roboto,Arial,sans-serif;
     margin-left: 1rem;
     display: block;
     position: absolute;
-    top: 40%;
+    top: 24%;
     box-sizing: border-box;
 }
 .cards .classroom-section{
-    position: absolute;
+    /* position: absolute;
     display: block;
     
     top: 55%;
-    box-sizing: border-box;
+    box-sizing: border-box; */
+    /* width: auto; */
+    color: honeydew;
+    font-family:'Google Sans',Roboto,Arial,sans-serif;
+    margin-left: -8.2rem;
+    display: inline-block;
+    position: relative;
+    top: 21%;
+    /* box-sizing: border-box; */
 }
 .cards .classroom-grade{
-    position: absolute;
+    /* position: absolute;
     display: block;
     
     top: 70%;
-    box-sizing: border-box; 
+    box-sizing: border-box;  */
+    
+    
+    color: honeydew;
+    font-family:'Google Sans',Roboto,Arial,sans-serif;
+    display: inline-block;
+    position: relative;
+    top: 21%;
+    /* box-sizing: border-box; */
 }
+.upperpart{
+    border-top-left-radius:12px ;
+    border-top-right-radius:12px ;
+    /* background-color: rgb(9, 158, 83); */
+    background-color: yellowgreen;
+    /* background-color: whitesmoke; */
+    
+    height: 35%;
+
+}
+.middlepart{
+    flex-direction: row-reverse;
+    overflow: visible;
+    position: relative;
+    background-color: #fff;
+    height: 50%;
+}
+.bottompart{
+    border-bottom:1px solid rgb(199,199,199); ;
+    text-align: end;
+    background-color: #fff;
+    border-bottom-left-radius:12px ;
+    border-bottom-right-radius:12px ;
+    height: 15%;
+    border-top: 2px solid rgb(199,199,199);
+}
+.bottompart small{
+    margin-right: 0.5rem;
+    line-height: 3rem;
+    
+}
+#creator {
+    margin-top: -45px;
+    margin-left: 12rem;
+    width: 100px;
+    border-radius: 50%;
+  }
