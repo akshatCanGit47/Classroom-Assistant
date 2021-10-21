@@ -106,3 +106,21 @@ module.exports.joinClassroomDetails = function(req,res){
         title: 'Join Classroom'
     });
 }
+
+module.exports.joinClassroom = function(req,res){
+    Classroom.findById(req.body.classroom_id, function(err,classroom){
+        if(err){console.log("Error in finding classroom from the form");}
+        if(classroom){
+            classroom.students.push(req.user._id);
+            User.findById(req.user._id,function(err,user){
+                if(err){ console.log("Error in finding user while joining classroom");}
+                if(user){
+                    user.classrooms.push(req.body.classroom_id);
+                    user.save();
+                }
+            });
+            classroom.save();
+            res.redirect('/users/home');
+        }
+    });
+}

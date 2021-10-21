@@ -21,6 +21,7 @@ router.get('/create-classroom',passport.checkAuthentication,usersController.crea
 router.post('/new-classroom',passport.checkAuthentication,usersController.newClassroom);
 
 router.get('/join-classroom-details',passport.checkAuthentication,usersController.joinClassroomDetails);
+router.post('/join-classroom',passport.checkAuthentication,usersController.joinClassroom);
 // router.get('/change-avatar',usersController.changeAvatar);
 // roruter.get('/changePassword',usersController.changePassword);
 // router.get('/change-name-email',usersController.changeNameEmail);

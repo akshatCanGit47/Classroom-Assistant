@@ -1,4 +1,4 @@
-.join-classroom-form-container {font-family: Arial, Helvetica, sans-serif;}
+
 * {box-sizing: border-box;}
 
 input[type=text], select
@@ -34,4 +34,5 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
