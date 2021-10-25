@@ -14,7 +14,7 @@ const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
 //express ejs layouts
 const expressLayouts = require('express-ejs-layouts');
-
+const querystring = require('querystring');
 
 //now we will use a middleware to parse the form data into request.body's data
 app.use(express.urlencoded({ extended: false }));

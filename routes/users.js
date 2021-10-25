@@ -26,5 +26,5 @@ router.post('/join-classroom',passport.checkAuthentication,usersController.joinC
 // roruter.get('/changePassword',usersController.changePassword);
 // router.get('/change-name-email',usersController.changeNameEmail);
 
-
+router.get('/classroom',passport.checkAuthentication,usersController.openClassroom);
 module.exports = router;
