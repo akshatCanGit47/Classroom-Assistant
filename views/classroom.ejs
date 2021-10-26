@@ -4,8 +4,9 @@
         <button id="copy-code-btn">copy code</button>
     </div>
 
-    <form id="make-announcement" action="/users/classroom/make-announcement">
-        <textarea name="announcement" id="" cols="30" rows="4" placeholder="Make your announcement"></textarea>
+    <form id="make-announcement" action="/users/classroom/make-announcement" method="post">
+        <textarea name="content" id="" cols="30" rows="4" placeholder="Make your announcement"></textarea>
+        <input type="hidden" name="classroom_id" value="<%= classroom._id %>" >
         <input type="submit">
     </form>
     <script src="/js/classroom.js"></script>

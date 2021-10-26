@@ -9,7 +9,7 @@ copyButton.addEventListener('click',function(e){
   
      /* Copy the text inside the text field */
     navigator.clipboard.writeText(copyText.dataset.classroomCode);
-    console.log("should have been to copied to clipboard:"+copyText.dataset.classroomCode);
+    // console.log("should have been to copied to clipboard:"+copyText.dataset.classroomCode);
     /* Alert the copied text */
     alert("Copied the text: " + copyText.dataset.classroomCode);
 });

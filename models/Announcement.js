@@ -9,6 +9,10 @@ const announcementSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    announcementType: {
+        type: String,
+        required: true
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

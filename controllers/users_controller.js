@@ -126,20 +126,3 @@ module.exports.joinClassroom = function(req,res){
     });
 }
 
-module.exports.openClassroom = function(req,res){
-    console.log("classroom should be opening");
-    console.log(req.query.id);
-    var id = mongoose.Types.ObjectId(req.query.id);
-    console.log(id);
-    Classroom.findById(id,function(err,classroom){
-        if(err){return console.log("Error in finding classroom");}
-        if(classroom){
-            console.log("classoom found");
-            //console.log(classroom._id);
-           return res.render("classroom",{
-               classroom: classroom,
-               title: 'classroom'
-           });
-        }
-    });
-}
