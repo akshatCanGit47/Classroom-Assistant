@@ -1,28 +1,24 @@
-<link rel="stylesheet" href="/css/users_home.css">
-<div id="classroom-cards-container">
-        <% for (classroom of users.classrooms){ %>
-                <div class="cards">
-                        <div class="upperpart">
-                                <a href=""><h1 class="classroom-title"> <%= classroom.title %> </h1></a>
-                                <small class="classroom-section"> sec-<%= classroom.section %> </small>
-                                <label>&nbsp;<small class="classroom-grade"> grade-<%= classroom.grade %> </small></label>
-                                <label>&nbsp;<span> <%= classroom.teacher.name %> </span></label>
+        <link rel="stylesheet" href="/css/users_home.css">
+        <div id="classroom-cards-container">
+                <% for (classroom of users.classrooms){ %>
+                        <div class="cards">
+                                <div class="upperpart">
+                                        <a href=""><h1 class="classroom-title"> <%= classroom.title %> </h1></a>
+                                        <small class="classroom-section"> sec-<%= classroom.section %> </small>
+                                        <label>&nbsp;<small class="classroom-grade"> grade-<%= classroom.grade %> </small></label>
+                                        <label>&nbsp;<span> <%= classroom.teacher.name %> </span></label>
+                                </div>
+                                <div class="middlepart">
+                                        <img id="creator" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                                        <!-- <small class="classroom-section"> sec-<%= classroom.section %> </small>
+                                        <small class="classroom-grade"> grade-<%= classroom.grade %> </small> -->
+                                </div>
+
+                                <div class="bottompart">
+                                        <small>CREATED AT:<%= classroom.createdAt %></small>
+                                </div>
+
                         </div>
-                        <div class="middlepart">
-                                <img id="creator" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                <!-- <small class="classroom-section"> sec-<%= classroom.section %> </small>
-                                <small class="classroom-grade"> grade-<%= classroom.grade %> </small> -->
-                        </div>
+                <% } %>
 
-                        <div class="bottompart">
-                                <small>CREATED AT:<%= classroom.createdAt %></small>
-                        </div>
-
-                </div>
-        <% } %>
-
-</div>
-
-        
-
-    
+        </div>
