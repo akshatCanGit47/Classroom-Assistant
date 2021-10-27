@@ -1,5 +1,8 @@
+main{
+    z-index: 0;
+}
 #make-announcement{
-    height: 5vh;
+    height: 5vh; 
     width: 50%;
     position: absolute;
     top:20vh;
@@ -29,4 +32,31 @@
 }
 #classroom-code{
     width: 80%;
+}
+#all-announcements{
+    position: absolute;
+    left: 10vw;
+    top: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 10px; */
+    width: 50%;
+    
+}
+.announcement{
+    display: block;
+    padding: 20px;
+    min-height: 100px;
+    width: 100%;
+    border-color: black;
+    overflow: hidden;
+}
+.announcement h3{
+    display: inline;
+}
+.announcement small{
+    /* position: ; */
+    display: block;
+    margin: 10px;
 }

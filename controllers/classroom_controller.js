@@ -9,16 +9,17 @@ module.exports.openClassroom = function(req,res){
     console.log(req.query.id);
     var id = mongoose.Types.ObjectId(req.query.id);
     console.log(id);
-    Classroom.findById(id,function(err,classroom){
-        if(err){return console.log("Error in finding classroom");}
-        if(classroom){
-            console.log("classoom found");
-            //console.log(classroom._id);
-           return res.render("classroom",{
-               classroom: classroom,
-               title: 'classroom'
-           });
+    Classroom.findOne({_id:id})
+    .populate({
+        path: 'announcements',
+        populate: {
+            path: 'user'
         }
+    }).exec(function(err,classroom){
+        return res.render('classroom',{
+            title: 'classroom',
+            classroom: classroom
+        });
     });
 }
 
