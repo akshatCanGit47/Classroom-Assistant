@@ -30,6 +30,12 @@ const classSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         }
+    ],
+    announcements: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Announcement'
+        }
     ]
 
 },
