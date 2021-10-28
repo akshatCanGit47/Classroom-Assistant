@@ -27,6 +27,7 @@ input[type=submit]:hover {
 }
 
 .join-classroom-form-container {
+  display: none;
   background-color:rgba(0, 0, 0, 0.657);
   position:absolute;
   z-index: 3;

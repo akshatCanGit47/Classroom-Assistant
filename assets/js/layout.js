@@ -57,9 +57,9 @@ document.addEventListener('click', function () {
 function joinClassroom(){
   console.log("working");
   var x=document.getElementById("join");
-    if(x.style.display === "none"){
       x.style.display = "block";
-    }else{
+  }
+  function closejoinclassroom(){
+    var x=document.getElementById("join");
       x.style.display = "none";
-    }
   }
