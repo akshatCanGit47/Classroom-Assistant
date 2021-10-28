@@ -1,6 +1,7 @@
 const User = require('../models/User.js');
 const path = require('path');
 const Classroom = require('../models/Classroom');
+const mongoose = require('mongoose');
 module.exports.checkAuth = function(req,res){
    
     //Todo later
@@ -125,3 +126,4 @@ module.exports.joinClassroom = function(req,res){
         }
     });
 }
+

@@ -1,0 +1,32 @@
+#make-announcement{
+    height: 5vh;
+    width: 50%;
+    position: absolute;
+    top:20vh;
+    left: 30vw;
+}
+#copy-classroom-code{
+    position: absolute;
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    left: 10vw;
+    top: 20vh;
+    background-color: whitesmoke;
+    overflow: hidden;
+    box-shadow: 0 5px 5px 0 rgba(255, 255, 255, 0.315);
+    gap: 10vh;
+}
+#copy-code-btn{
+    height: 30%;
+    width: 50%;
+    background-color: yellowgreen;
+    
+}
+#copy-code-btn:hover{
+    background-color: rgb(42, 80, 4);
+}
+#classroom-code{
+    width: 80%;
+}
