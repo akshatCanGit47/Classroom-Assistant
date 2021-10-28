@@ -9,5 +9,16 @@
         <input type="hidden" name="classroom_id" value="<%= classroom._id %>" >
         <input type="submit">
     </form>
+    <section id="all-announcements">
+        <% for(announcement of classroom.announcements){ %>
+            <div class="announcement">
+                <h3><%= announcement.user.name %></h3>
+                <% if(classroom.teacher.toString() === locals.user.id){ %>
+                    <h3>X</h3>
+                    <% } %>
+                <small><%= announcement.content %></small>
+            </div>
+            <% } %>
+    </section>
     <script src="/js/classroom.js"></script>
 <!-- <p><%= locals.user._id %></p> -->

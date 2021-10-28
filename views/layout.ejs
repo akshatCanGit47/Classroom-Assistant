@@ -11,35 +11,36 @@
     <title><%= title %></title>
 </head>
 <body id="main-body">
-        <nav>
-            <button id="bar" class="ham-bar-icon">
-                <i class="fas fa-bars fa-lg" ></i>
-            </button>
-            <div id="avtar">
-                <img src="/images/profile.jpg" alt="profile">
-            </div>
-            <div id="heading">
-                <h1>Classroom Assistant</h1>
-            </div>
-            <button id="create">
-                <i class="fas fa-plus fa-lg"></i>
-            </button>
-            <button id="settings">
-                <i class="fas fa-cog fa-lg fa-spin fa-pulse"></i>
-            </button>
-        </nav>
-    <section id="menu-visible" >
-        <p>all the Classroom</p>
-    </section>
-    <section id="settings-dropdown">
-        <ul>
-            <li>
-                <a href="/users/profile">
-                    <button>
-                        Profile
-                    </button>
-                </a>
-            </li>
+    <header>
+            <nav>
+                <button id="bar" class="ham-bar-icon">
+                    <i class="fas fa-bars fa-lg" ></i>
+                </button>
+                <div id="avtar">
+                    <img src="/images/profile.jpg" alt="profile">
+                </div>
+                <div id="heading">
+                    <h1>Classroom Assistant</h1>
+                </div>
+                <button id="create">
+                    <i class="fas fa-plus fa-lg"></i>
+                </button>
+                <button id="settings">
+                    <i class="fas fa-cog fa-lg fa-spin fa-pulse"></i>
+                </button>
+            </nav>
+        <section id="menu-visible" >
+            <p>all the Classroom</p>
+        </section>
+        <section id="settings-dropdown">
+            <ul>
+                <li>
+                    <a href="/users/profile">
+                        <button>
+                            Profile
+                        </button>
+                    </a>
+                </li>
 
             <li>
                 <a href="/users/Sign-out">
@@ -68,7 +69,9 @@
 
             </li>
         </ul>
-    </section>
+    </section>             
+    </header>
+
     <main id=user-details > 
         <%- body %>
     </main>
