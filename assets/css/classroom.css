@@ -1,5 +1,6 @@
 main{
     z-index: 0;
+    position: relative;
 }
 #make-announcement{
     height: 5vh; 
@@ -45,6 +46,7 @@ main{
     
 }
 .announcement{
+    position: relative;
     display: block;
     padding: 20px;
     min-height: 100px;
@@ -59,4 +61,31 @@ main{
     /* position: ; */
     display: block;
     margin: 10px;
+}
+
+.delete{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    height: 20px;
+    width: 20px;
+    justify-content: center;
+}
+.delete:hover{
+    background-color: red;
+}
+.delete a i{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete a{
+    align-items: center;
+    justify-content: center;
 }

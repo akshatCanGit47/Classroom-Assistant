@@ -14,7 +14,8 @@
             <div class="announcement">
                 <h3><%= announcement.user.name %></h3>
                 <% if(classroom.teacher.toString() === locals.user.id){ %>
-                    <h3>X</h3>
+                    <% link = "/users/classroom/delete-post"+"?"+"classroom_id="+classroom._id.toString()+"&"+"announcement_id="+announcement.id %>
+                   <div class="delete"><a href="<%=link %>"><i class="fas fa-times"></i></a></div>
                     <% } %>
                 <small><%= announcement.content %></small>
             </div>
