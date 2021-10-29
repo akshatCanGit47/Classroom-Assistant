@@ -54,3 +54,12 @@ document.addEventListener('click', function () {
   createJoinDropdown.classList.remove('create-join-dropdown-active');
 });
 
+function joinClassroom(){
+  console.log("working");
+  var x=document.getElementById("join");
+      x.style.display = "block";
+  }
+  function closejoinclassroom(){
+    var x=document.getElementById("join");
+      x.style.display = "none";
+  }

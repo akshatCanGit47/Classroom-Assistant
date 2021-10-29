@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/e32f3d0e24.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/join_classroom.css">
     <%- style %>
     <title><%= title %></title>
 </head>
@@ -41,38 +42,50 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="/users/Sign-out">
-                        <button>
-                            Signout
-                        </button>
-                    </a>    
-                </li>
+            <li>
+                <a href="/users/Sign-out">
+                    <button>
+                        Signout
+                    </button>
+                </a>    
+            </li>
+            
+        </ul>
+    </section>
+    <section id="create-join-dropdown">
+        <ul>
+            <li>
+                <a href="/users/create-classroom">
+                    <button>
+                        Create
+                    </button>
+                </a>
+            </li>
+            <li>
                 
-            </ul>
-        </section>
-        <section id="create-join-dropdown">
-            <ul>
-                <li>
-                    <a href="/users/create-classroom">
-                        <button>
-                            Create
-                        </button>
-                    </a>
-                </li>
-                <li>
-                    <a href="/users/join-classroom-details">
-                        <button>
-                            Join
-                        </button>
-                    </a>
-                </li>
-            </ul>
-        </section>
+                    <button onclick="joinClassroom()">
+                        Join
+                    </button>
+
+            </li>
+        </ul>
+    </section>             
     </header>
+
     <main id=user-details > 
         <%- body %>
     </main>
+    <div class="join-classroom-form-container" id="join">
+        <div class="join-classroom-container">
+        <h3>Create Classroom Form</h3>
+        <i class="fas fa-window-close fa-lg" onclick="closejoinclassroom()"></i>
+    <form action="/users/join-classroom" method="post">
+        <label for="id">Classroom Id</label>
+        <input type="text" name="classroom_id" placeholder="Enter the id ">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</div>
     <!-- <script src="./jquery-3.6.0.js"></script> -->
     <script src="/js/layout.js"></script>
     <%- script %>
