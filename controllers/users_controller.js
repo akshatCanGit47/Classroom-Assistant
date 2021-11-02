@@ -125,5 +125,4 @@ module.exports.joinClassroom = function(req,res){
             res.redirect('/users/home');
         }
     });
-}
-
+}   
