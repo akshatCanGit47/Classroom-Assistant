@@ -60,9 +60,8 @@ main{
 .announcement small{
     /* position: ; */
     display: block;
-    margin: 10px;
+    margin: 0;
 }
-
 .delete{
     position: absolute;
     top: 0;
