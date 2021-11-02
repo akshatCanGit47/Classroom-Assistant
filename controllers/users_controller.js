@@ -2,6 +2,9 @@ const User = require('../models/User.js');
 const path = require('path');
 const Classroom = require('../models/Classroom');
 const mongoose = require('mongoose');
+const { join } = require('path');
+const fs = require('fs');
+const upload = require('../config/multer.js');
 module.exports.checkAuth = function(req,res){
    
     //Todo later
@@ -20,6 +23,7 @@ module.exports.signUp = function(req, res){
 
         if (!user){
                 User.create({
+                    avatar: "/images/profile.jpg",
                     name: req.body.name,
                     password: req.body.password,
                     email: req.body.email
@@ -42,6 +46,7 @@ module.exports.signUp = function(req, res){
 
 
 module.exports.usersHome = function(req,res){
+    var profileLink = "/users/profile/?id="+ req.user.id;
     if(req.isAuthenticated()){
         User.findOne({_id:req.user._id})
         .populate({
@@ -52,7 +57,8 @@ module.exports.usersHome = function(req,res){
         }).exec(function(err,user){
                 return res.render('users_home',{
                     title: "Users Home",
-                    users: user
+                    users: user,
+                    link: profileLink
                 });
         });
         
@@ -101,18 +107,17 @@ module.exports.newClassroom = function(req,res){
     }); 
 }
 
-// module.exports.joinClassroomDetails = function(req,res){
-//     res.render('join_classroom',
-//     {
-//         layout: false ,
-//         title: 'Join Classroom'
-//     });
-// }
+module.exports.joinClassroomDetails = function(req,res){
+    res.render('join_classroom',
+    {
+        title: 'Join Classroom'
+    });
+}
 
 module.exports.joinClassroom = function(req,res){
     Classroom.findById(req.body.classroom_id, function(err,classroom){
         if(err){console.log("Error in finding classroom from the form");}
-        if(classroom){  
+        if(classroom){
             classroom.students.push(req.user._id);
             User.findById(req.user._id,function(err,user){
                 if(err){ console.log("Error in finding user while joining classroom");}
@@ -126,4 +131,33 @@ module.exports.joinClassroom = function(req,res){
         }
     });
 }
+module.exports.profile = function(req,res){
+    var profileLink = "/users/profile/?id="+req.user.id;
+    res.render('profile',{
+        title: "profile",
+        link: profileLink
+    });
+}
 
+module.exports.changeAvatar = function(req,res){
+    User.findById(req.user.id,function(err,user){
+        if(err){console.log("Error in finding user in updating the avatar"); return}
+        console.log(user.avatar+" "+path.join("uploads/users/avatars","/",req.file.filename));
+        if(user.avatar == "/images/profile.jpg"){
+            user.avatar = path.join("/uploads/users/avatars","/",req.file.filename);
+            user.save();
+            res.redirect('/users/profile');
+        }
+        else {
+           fs.unlinkSync(path.join(__dirname,"..",user.avatar));
+           user.avatar = path.join("/uploads/users/avatars","/",req.file.filename);
+           user.save();
+           res.redirect('/users/profile');
+        }
+    });
+    
+}
+
+module.exports.removeAvatar = function(req,res){
+    
+}

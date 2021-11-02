@@ -31,7 +31,6 @@ app.use('/uploads',express.static(__dirname + '/uploads'));
 
 app.use(expressLayouts);
 
-
 //Extracting styles and puuting them in the header
 app.set('layout extractStyles', true);
 //Extracting scripts and putting them below body
