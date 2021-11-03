@@ -46,7 +46,7 @@ module.exports.signUp = function(req, res){
 
 
 module.exports.usersHome = function(req,res){
-    var profileLink = "/users/profile/?id="+ req.user.id;
+    
     if(req.isAuthenticated()){
         User.findOne({_id:req.user._id})
         .populate({
@@ -57,8 +57,8 @@ module.exports.usersHome = function(req,res){
         }).exec(function(err,user){
                 return res.render('users_home',{
                     title: "Users Home",
-                    users: user,
-                    link: profileLink
+                    users: user
+                    
                 });
         });
         
