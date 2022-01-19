@@ -18,6 +18,11 @@
                    <div class="delete"><a href="<%=link %>"><i class="fas fa-times"></i></a></div>
                     <% } %>
                 <small><%= announcement.content %></small>
+                <form action="/users/classroom/make-comments" method="post">
+                    <input type="hidden" name="announcement_id" value="<%= announcement._id %>">
+                    <input type="hidden" name="classroom_id" value="<%= announcement._id %>">
+                    <input type="text" name="comments" placeholder="post your comment">
+                </form>
             </div>
             <% } %>
     </section>
