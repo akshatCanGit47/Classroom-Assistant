@@ -3,6 +3,7 @@ const path = require('path');
 const Classroom = require('../models/Classroom');
 const mongoose = require('mongoose');
 const Announcement = require('../models/Announcement');
+const Comments = require("../models/Comments"); 
 
 module.exports.openClassroom = function(req,res){
     // console.log("classroom should be opening");
@@ -80,4 +81,21 @@ module.exports.deleteAnnouncement = function(req,res){
         res.redirect('back');
         
     });
+}
+
+module.exports.makeComments = function(req,res){
+    
+   Classroom.findById(req.body.classroom_id,function(err,classroom){
+       if(classroom.students.find(req.user.id) || classroom.teacher === req.user.id){
+        Announcement.findById(req.body.announcement_id,function(err,announcement){
+            Comments.create({
+                content: req.body.comments,
+                user: mongoose.Types.ObjectId(req.user.id),
+                announcement: mongoose.Types.ObjectId(req.body.announcement_id)
+            },function(err,comment){
+                announcement.comments.shift(comment);
+            });
+        });
+       }
+   });
 }
