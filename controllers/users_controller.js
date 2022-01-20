@@ -149,10 +149,10 @@ module.exports.changeAvatar = function(req,res){
             res.redirect('/users/profile');
         }
         else {
-           
+           temp = user.avatar;
            user.avatar = path.join("/uploads/users/avatars","/",req.file.filename);
            console.log("avatar",user.avatar);
-           fs.unlinkSync(path.join(__dirname,"..",user.avatar));
+           fs.unlinkSync(path.join(__dirname,"..",temp));
            user.save();
            res.redirect('/users/profile');
         }
