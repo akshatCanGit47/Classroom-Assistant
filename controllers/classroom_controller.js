@@ -15,8 +15,15 @@ module.exports.openClassroom = function(req,res){
         path: 'announcements',
         populate: {
             path: 'user'
+        },
+        populate: {
+            path: 'comments',
+            populate:{
+                path: 'user'
+            }
         }
-    }).exec(function(err,classroom){
+    })
+    .exec(function(err,classroom){
         return res.render('classroom',{
             title: 'classroom',
             classroom: classroom
@@ -46,19 +53,7 @@ module.exports.makeAnnouncement = function(req,res){
                     res.redirect('back');
                 });
             }
-            else{
-                Announcement.create({
-                    content: req.body.content,
-                    userType: 'Student',
-                    announcementType: 'class comment',
-                    user: req.user._id
-                },function(err,announcement){
-                    if(err){console.log("Erro in creating a annonucemnet:"+err); return}
-                    classroom.announcements.shift(announcement);
-                    classroom.save()
-                    res.redirect('back');
-                });
-            }
+          
         }
     });
 }
@@ -69,7 +64,7 @@ module.exports.deleteAnnouncement = function(req,res){
     var announcementId = mongoose.Types.ObjectId(req.query.announcement_id);
     Classroom.findById(classroomId,function(err,classroom){
         if(err){ console.log("Error in finding classroom"); return}
-        // console.log(req.user.id+" "+classroom.teacher +(req.user.id==classroom.teacher));
+        //console.log(req.user.id+" "+classroom.teacher +(req.user.id==classroom.teacher));
         if(req.user.id == classroom.teacher){
             Announcement.findById(announcementId,function(err,announcement){
                 if(err){ console.log("error in finding anouncement to delete"); return}
@@ -85,17 +80,38 @@ module.exports.deleteAnnouncement = function(req,res){
 
 module.exports.makeComments = function(req,res){
     
-   Classroom.findById(req.body.classroom_id,function(err,classroom){
-       if(classroom.students.find(req.user.id) || classroom.teacher === req.user.id){
-        Announcement.findById(req.body.announcement_id,function(err,announcement){
-            Comments.create({
-                content: req.body.comments,
-                user: mongoose.Types.ObjectId(req.user.id),
-                announcement: mongoose.Types.ObjectId(req.body.announcement_id)
-            },function(err,comment){
-                announcement.comments.shift(comment);
+   Classroom.findById(req.body.classroom_id)
+   .populate({
+    path: 'students'
+    })
+    .exec(function(err,classroom){
+        if(err){
+            console.log("Error in finding the classroom");
+        }
+        if(classroom){
+        console.log(classroom.teacher.toString() === req.user.id );
+        students = classroom.students;
+        if(students.find((s) => s._id.toString() === req.user.id) || classroom.teacher.toString() === req.user.id){
+            Announcement.findById(req.body.announcement_id,function(err,announcement){
+                if(err){
+                    console.log("Error in finding announcement");
+                }
+                if(announcement){
+                    Comments.create({
+                        content: req.body.comments,
+                        user: mongoose.Types.ObjectId(req.user.id),
+                        announcement: mongoose.Types.ObjectId(req.body.announcement_id)
+                    },function(err,comment){
+                        announcement.comments.unshift(comment);
+                        console.log(comment);
+                        announcement.save();
+                    });
+                }
             });
-        });
-       }
+
+        }
+    }
+    
+   res.redirect('back');
    });
 }

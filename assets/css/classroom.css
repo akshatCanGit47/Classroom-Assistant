@@ -88,3 +88,20 @@ main{
     align-items: center;
     justify-content: center;
 }
+.comments-wrapper{
+    border-left: 4px solid greenyellow;
+    height: auto;
+    position: relative;
+}
+.comments-content{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    /* position: absolute; */
+    /* left: 5%; */
+}
+.comments-content div {
+    
+    
+    
+}

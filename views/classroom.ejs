@@ -18,9 +18,19 @@
                    <div class="delete"><a href="<%=link %>"><i class="fas fa-times"></i></a></div>
                     <% } %>
                 <small><%= announcement.content %></small>
+                <div class='comments-wrapper'>
+                    <% for(comment of announcement.comments){ %>
+                        <div class='comments-content'>
+                            <div>
+                                <span> <%= comment.user.name</span>
+                                <span><%= comment.content %></span>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
                 <form action="/users/classroom/make-comments" method="post">
                     <input type="hidden" name="announcement_id" value="<%= announcement._id %>">
-                    <input type="hidden" name="classroom_id" value="<%= announcement._id %>">
+                    <input type="hidden" name="classroom_id" value="<%= classroom._id %>">
                     <input type="text" name="comments" placeholder="post your comment">
                 </form>
             </div>

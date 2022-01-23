@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Comments = require('./Comments');
 
 const announcementSchema = new mongoose.Schema({
     content: {
@@ -16,7 +17,13 @@ const announcementSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Comments'
+        }
+    ]
 },
 {
     timestamps: true
