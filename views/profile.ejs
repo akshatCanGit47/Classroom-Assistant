@@ -1,5 +1,30 @@
 <link rel="stylesheet" href="/css/profile.css">
-<form action="/users/change-avatar" method="post" enctype="multipart/form-data">
+<div class="container">
+<div class="left_container">
+<form action="/users/change-avatar" method="post" enctype="multipart/form-data" id="left-form">
     <input type="file" name="avatar">
     <input type="submit">
 </form>
+</div>
+<div class="right_container">
+    <form action="" method="post" id="right-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name">
+    </br>
+    
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email">
+    </br>
+        <label for="Bio">Bio</label>
+        <textarea id="Bio" name="Bio" placeholder="Write something.." style="height:100px"></textarea>
+    </br>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject..">
+    </br>
+        <label for="Grade">Grade</label>
+        <input type="text" id="grade" name="grade" placeholder="Grade..">
+    </br>
+        <input type="submit" value="Submit">
+      </form>
+</div>
+</div>

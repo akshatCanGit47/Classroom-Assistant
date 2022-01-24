@@ -4,6 +4,7 @@ const Classroom = require('../models/Classroom');
 const mongoose = require('mongoose');
 const Announcement = require('../models/Announcement');
 const Comments = require("../models/Comments"); 
+const announcementMailer = require('../mailers/announcements_mailer');
 
 module.exports.openClassroom = function(req,res){
     // console.log("classroom should be opening");
@@ -31,7 +32,7 @@ module.exports.openClassroom = function(req,res){
     });
 }
 
-module.exports.makeAnnouncement = function(req,res){
+module.exports.makeAnnouncement =  function(req,res){
     var id = mongoose.Types.ObjectId(req.body.classroom_id);
     Classroom.findById(id,function(err,classroom){
         if(err){ console.log("Error in finding classroom :"+ err);}
@@ -51,7 +52,9 @@ module.exports.makeAnnouncement = function(req,res){
                     classroom.announcements.unshift(announcement);
                     classroom.save();
                     res.redirect('back');
-                });
+                }); 
+                // classroom = Classroom.populate('announcements','students');
+                announcementMailer.newAnnouncement(classroom)
             }
           
         }
