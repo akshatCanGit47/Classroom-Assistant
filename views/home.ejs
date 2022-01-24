@@ -11,7 +11,7 @@
         <div class="container" id="container">
             <div class="sign-in_container">
                 <h1>Sign in</h1>
-                <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your account</span>
+                <!-- <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your account</span> -->
                 <form action="/users/Create-Session" method="POST" >
                 <input type="email" name="email" id="email" placeholder="Email">
                 </br>
@@ -20,6 +20,13 @@
             </br>
                 <button id="btn" type="submit">SIGN IN</button>
             </form>
+            <span class="or">Or</span>
+            <div class="google-btn">
+                <div class="google-icon-wrapper">
+                  <img class="google-icon-svg" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                </div>
+                <p class="btn-text"><b>Sign in with Google</b></p>
+            </div>
             </div>
             <div class="right_side_layout">
                 
@@ -30,7 +37,7 @@
             </div>
             <div class="sign-up_container">
                 <h1>Create Account</h1>
-                <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your email for registeration</span>
+                <!-- <span style="font-family: sans-serif; font-size: small;font-weight: lighter;">or use your email for registeration</span> -->
                 <form action="/users/Sign-up" method="POST" >
                 <input type="text" name="name" id="name" placeholder="Name">
                 </br>
@@ -39,6 +46,13 @@
                 <input type="password" name="password" id="password" placeholder="Password">
                 <button type="submit" id="btn_signup">SIGN UP</button>
                 </form>
+                <span class="or">Or</span>
+                <div class="google-btn">
+                    <div class="google-icon-wrapper">
+                      <img class="google-icon-svg" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                    </div>
+                    <p class="btn-text"><b>Sign up with Google</b></p>
+                </div>
             </div>
             <div class="left_side_layout">
                 <h1>WELCOME BACK!</h1>
